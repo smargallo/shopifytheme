@@ -1,0 +1,23 @@
+<html>
+<head>
+    {{ content_for_header }}
+    <style>
+        {{ settings.body_font | font_face }}
+
+        :root {
+            --bodyFont: {{ settings.body_font.family  }};
+            --bodyFontWeight: {{ settings.body_font.weight  }};
+        }
+    </style>
+    {{'style.css' | | asset_url | stylesheet_tag: preload: true  }}
+    {{'custom.css' | | asset_url | stylesheet_tag: preload: true  }}
+
+</head>
+<body>
+    {% section 'header' %}
+    
+    <div class="max-w-screen-xl mx-auto py-[35px] sm:px-0">
+        {{ content_for_layout }}
+    <div>
+</body>
+</html>

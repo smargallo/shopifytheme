@@ -1,0 +1,31 @@
+[
+    {
+        "name":"Typography",
+        "settings": [
+            {
+                "type": "font_picker",
+                "id": "body_font",
+                "label": "Body font",
+                "default": "helvetica_n4"
+            }
+        ]
+    },
+
+    {
+        "name": "Colors",
+        "settings": [
+            {
+                "type": "color",
+                "id": "bg",
+                "label": "Background Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color",
+                "default": "#000"
+            }
+        ]
+    }
+]

@@ -1,0 +1,117 @@
+ <nav class="bg-white border-gray-200 px-4 lg:px-6 pt-[10px] pb-[8px] dark:bg-gray-800">
+        <div class="flex flex-wrap items-end mx-auto max-w-screen-xl">
+
+            <a href="#" class="flex items-cente mr-[37px] flex-none ">
+                <img class="mr-3 h-[59px] w-[200px]" src="{{ 'logo-full.png' | asset_url }}" />  
+            </a>
+            <div class="flex flex-wrap justify-between flex-1 w-90">
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 gap-x-[32px]">
+                        {% for link in linklists.main-menu.links -%}
+                            <li>
+                                <a href="{{link.url }}" class="block py-2 text-gray-700  hover:border-b-[6px] hover:border-solid hover:border-blue-500 transition-all">
+                                    {{link.title}}
+                                </a>  
+                            </li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+    
+    
+                 <div class="flex items-center gap-x-[32px]">
+    
+                    
+                    <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                        
+                        {%- if section.settings.show_search -%}
+                            <form action="/search" class="m-0">
+                                
+                                <button type="submit" class="flex items-center gap-x-[5px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
+                                        <circle cx="8.24275" cy="8.24275" r="7.74275" transform="matrix(-1 0 0 1 16.4854 0.508789)" stroke="#000E1D"/>
+                                        <line y1="-0.5" x2="9.19685" y2="-0.5" transform="matrix(0.718913 0.6951 0.6951 -0.718913 13.3882 14.0977)" stroke="#000E1D"/>
+                                    </svg>
+
+                                    Search
+                                </button>
+
+                                <input type="search" name="q" class="hidden">
+
+                            </form>
+                        {%- endif -%}
+                    </a>
+
+                    <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                        
+                       
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <path d="M3.125 23.856V22.2935C3.125 18.8417 5.92322 16.0435 9.375 16.0435H15.625C19.0767 16.0435 21.875 18.8417 21.875 22.2935V23.856" stroke="#000E1D" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M12.5 11.356C9.91109 11.356 7.8125 9.25729 7.8125 6.66846C7.8125 4.07963 9.91109 1.98096 12.5 1.98096C15.0889 1.98096 17.1875 4.07963 17.1875 6.66846C17.1875 9.25729 15.0889 11.356 12.5 11.356Z" stroke="#000E1D" stroke-width="1.25" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                        
+                        
+                        Tie
+                        
+                    </a>
+     
+    
+                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+    
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+
+<style>
+    .header {
+        background-color: {{ section.settings.bg }};  
+        color: {{ section.settings.text_color }};  
+    } 
+</style>
+
+{%- stylesheet -%}
+
+    .header {
+        padding: 20px;  
+    } 
+    
+{%- endstylesheet -%}
+
+{% javascript %}
+    console.log('this is from header.')
+{% endjavascript %}
+
+{% schema %}
+    {
+        "name" : "Header",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "show_search",
+                "label": "Show search form?"
+            },
+            {
+                "type": "color",
+                "id": "bg",
+                "label": "Background color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text color",
+                "default": "#000"
+            }
+        ],
+        "tag": "header"
+    }
+{% endschema %}
