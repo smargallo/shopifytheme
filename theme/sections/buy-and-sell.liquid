@@ -1,0 +1,50 @@
+<h2>
+
+</h2>
+
+{% schema %}
+  {
+    "name": "Buy and Sell",
+    "tag": "section",
+    "class": "general-section",
+    "settings": [
+      
+    ],
+    "max_blocks": 3,
+    "blocks": [
+        {
+            "name": "Columns",
+            "type": "columns",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Your dress has a story to tell",
+                    "default": "Title"
+                },
+                {
+                    "id": "column_link",
+                    "type": "link_picker",
+                    "label": "Link",
+                    "default": {
+                        "url" : "#",
+                        "text" : "Click Here"
+                    }
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Buy and Sell",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

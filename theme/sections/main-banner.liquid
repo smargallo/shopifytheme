@@ -1,16 +1,97 @@
+<div class="main-banner" style="background-image: url('{{ section.settings.image | img_url: 'master' }}');">
+  <h2> {{ section.settings.title }} </h2>
+   {% if section.settings.description != empty %}
+      <div>
+          {{ section.settings.description }}
+      </div>
+   {% endif %}
+  <a href="#" class="">
+    <span>Scroll to Discover</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+      <path d="M17.7902 5.71022C17.6977 5.61752 17.5878 5.54397 17.4668 5.49379C17.3459 5.44361 17.2162 5.41778 17.0852 5.41778C16.9543 5.41778 16.8246 5.44361 16.7036 5.49379C16.5826 5.54397 16.4727 5.61752 16.3802 5.71022L12.5002 9.58022L8.61022 5.70022C8.51764 5.60764 8.40773 5.5342 8.28677 5.4841C8.1658 5.43399 8.03615 5.4082 7.90522 5.4082C7.77429 5.4082 7.64464 5.43399 7.52368 5.4841C7.40272 5.5342 7.29281 5.60764 7.20022 5.70022C7.10764 5.79281 7.0342 5.90272 6.9841 6.02368C6.93399 6.14464 6.9082 6.27429 6.9082 6.40522C6.9082 6.53615 6.93399 6.6658 6.9841 6.78677C7.0342 6.90773 7.10764 7.01764 7.20022 7.11022L11.7902 11.7002C12.1802 12.0902 12.8102 12.0902 13.2002 11.7002L17.7902 7.11022C17.8829 7.0187 17.9564 6.9097 18.0066 6.78954C18.0568 6.66938 18.0827 6.54045 18.0827 6.41022C18.0827 6.28 18.0568 6.15107 18.0066 6.03091C17.9564 5.91075 17.8829 5.80175 17.7902 5.71022Z" fill="#859CCB"/>
+      <path d="M17.79 11.2947C17.6975 11.202 17.5876 11.1284 17.4666 11.0783C17.3456 11.0281 17.216 11.0023 17.085 11.0023C16.954 11.0023 16.8243 11.0281 16.7034 11.0783C16.5824 11.1284 16.4725 11.202 16.38 11.2947L12.5 15.1647L8.61999 11.2847C8.43301 11.0977 8.17942 10.9927 7.91499 10.9927C7.65056 10.9927 7.39697 11.0977 7.20999 11.2847C7.02301 11.4717 6.91797 11.7253 6.91797 11.9897C6.91797 12.2541 7.02301 12.5077 7.20999 12.6947L11.8 17.2847C12.19 17.6747 12.82 17.6747 13.21 17.2847L17.8 12.6947C17.9836 12.5073 18.0856 12.2549 18.0837 11.9926C18.0818 11.7303 17.9762 11.4794 17.79 11.2947Z" fill="#859CCB"/>
+    </svg>
+  </a>
+</div>
+
+
+{%- style -%}
+  .main-banner {
+      min-height: 736px;
+      padding: 472px 175px 80px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        color: #F0EFED;
+        text-align: center; 
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal; 
+        margin: auto;
+        margin-bottom: 23px;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+          color: #F8F8F8;
+          text-align: center; 
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+
+
+      }
+  }
+{%- endstyle -%}
+
 {% schema %}
   {
     "name": "Main Banner",
     "tag": "section",
-    "class": "",
+    "class": "general-section",
     "settings": [
-      
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Text box heading",
+        "default": "Title"
+      },
+      {
+        "id": "description",
+        "type": "richtext",
+        "label": "Add custom text below",
+        "default": "<p>Add your text here</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
     ],
+    
     "presets": [
       {
         "name": "Main Banner",
-        "settings": {
-        }
+        "category": "Custom"
       }
     ]
   }

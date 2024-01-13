@@ -6,10 +6,10 @@
             </a>
             <div class="flex flex-wrap justify-between flex-1 w-90">
                 <div class="hidden justify-between items-center w-full lg:flex lg:w-auto" id="mobile-menu-2">
-                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 gap-x-[32px]">
+                    <ul class="main-menu flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 gap-x-[32px]">
                         {% for link in linklists.main-menu.links -%}
                             <li>
-                                <a href="{{link.url }}" class="block py-2 text-gray-700  hover:border-b-[6px] hover:border-solid hover:border-blue-500 transition-all">
+                                <a href="{{link.url }}" class="block my-2 text-gray-700">
                                     {{link.title}}
                                 </a>  
                             </li>
